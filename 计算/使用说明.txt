@@ -1,0 +1,19 @@
+本次任务使用的是python、flask、mysql,执行文件为计算.py
+类.py是刚开始写的纯python项目，也可执行计算，但没有连接其他东西
+
+主要功能为加减法的计算和并将录入数据库
+主要接口为http://127.0.0.1:5000/adda=<operand1>&b=<operand2>
+                  http://127.0.0.1:5000/suba=<operand1>&b=<operand2>
+                  http://127.0.0.1:5000/multiplya=<operand1>&b=<operand2>
+                  http://127.0.0.1:5000/divisiona=<operand1>&b=<operand2>
+无法处理‘？’，未完成http://localhost/add?a=<数1>&b=<数2>接口
+
+mysql使用了navicat for mysql软件直接建表
+建表代码应该为
+create table calc_record
+(     id int primary key not null,
+      operand1 float(10) not null,
+      operator char(10) not null,
+      operand2 float(10) not null,
+      result float(10) not null,
+)
